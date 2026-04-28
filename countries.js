@@ -9,15 +9,15 @@ const COUNTRIES_A_E = [
     flagAttribution: "Flag of Albania — Wikimedia Commons (Public Domain)",
     capitalImages: [
       {
-        url: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Skanderbeg_Square_Tirana_2016.jpg",
+        url: "https://commons.wikimedia.org/wiki/Special:FilePath/Skanderbeg_Square_Tirana_2016.jpg?width=800",
         attribution: "Skanderbeg Square, Tirana — Wikimedia Commons (CC BY-SA 4.0)"
       },
       {
-        url: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Tirana_Clock_Tower.jpg",
+        url: "https://commons.wikimedia.org/wiki/Special:FilePath/Tirana_Clock_Tower.jpg?width=800",
         attribution: "Clock Tower of Tirana — Wikimedia Commons (CC BY-SA 4.0)"
       },
       {
-        url: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Tirana_Et%27hem_Bey_Mosque.jpg",
+        url: "https://commons.wikimedia.org/wiki/Special:FilePath/Tirana_Et%27hem_Bey_Mosque.jpg?width=800",
         attribution: "Et'hem Bey Mosque, Tirana — Wikimedia Commons (CC BY-SA 4.0)"
       }
     ]
@@ -30,15 +30,15 @@ const COUNTRIES_A_E = [
     flagAttribution: "Flag of Algeria — Wikimedia Commons (Public Domain)",
     capitalImages: [
       {
-        url: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Martyrs%27_Memorial_Algiers.jpg",
+        url: "https://commons.wikimedia.org/wiki/Special:FilePath/Martyrs%27_Memorial_Algiers.jpg?width=800",
         attribution: "Martyrs' Memorial, Algiers — Wikimedia Commons (CC BY-SA 4.0)"
       },
       {
-        url: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Algiers_Casbah.jpg",
+        url: "https://commons.wikimedia.org/wiki/Special:FilePath/Algiers_Casbah.jpg?width=800",
         attribution: "Casbah of Algiers — Wikimedia Commons (CC BY-SA 3.0)"
       },
       {
-        url: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Notre_Dame_d%27Afrique_Algiers.jpg",
+        url: "https://commons.wikimedia.org/wiki/Special:FilePath/Notre_Dame_d%27Afrique_Algiers.jpg?width=800",
         attribution: "Notre Dame d'Afrique, Algiers — Wikimedia Commons (CC BY-SA 4.0)"
       }
     ]
@@ -51,15 +51,15 @@ const COUNTRIES_A_E = [
     flagAttribution: "Flag of Argentina — Wikimedia Commons (Public Domain)",
     capitalImages: [
       {
-        url: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Casa_Rosada_Buenos_Aires.jpg",
+        url: "https://commons.wikimedia.org/wiki/Special:FilePath/Casa_Rosada_Buenos_Aires.jpg?width=800",
         attribution: "Casa Rosada, Buenos Aires — Wikimedia Commons (CC BY-SA 4.0)"
       },
       {
-        url: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Obelisco_Buenos_Aires.jpg",
+        url: "https://commons.wikimedia.org/wiki/Special:FilePath/Obelisco_Buenos_Aires.jpg?width=800",
         attribution: "Obelisco de Buenos Aires — Wikimedia Commons (CC BY-SA 4.0)"
       },
       {
-        url: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Teatro_Col%C3%B3n_Buenos_Aires.jpg",
+        url: "https://commons.wikimedia.org/wiki/Special:FilePath/Teatro_Col%C3%B3n_Buenos_Aires.jpg?width=800",
         attribution: "Teatro Colón, Buenos Aires — Wikimedia Commons (CC BY-SA 4.0)"
       }
     ]
@@ -72,15 +72,15 @@ const COUNTRIES_A_E = [
     flagAttribution: "Flag of Australia — Wikimedia Commons (Public Domain)",
     capitalImages: [
       {
-        url: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Parliament_House_Canberra.jpg",
+        url: "https://commons.wikimedia.org/wiki/Special:FilePath/Parliament_House_Canberra.jpg?width=800",
         attribution: "Parliament House, Canberra — Wikimedia Commons (CC BY-SA 3.0)"
       },
       {
-        url: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Lake_Burley_Griffin_Canberra.jpg",
+        url: "https://commons.wikimedia.org/wiki/Special:FilePath/Lake_Burley_Griffin_Canberra.jpg?width=800",
         attribution: "Lake Burley Griffin, Canberra — Wikimedia Commons (CC BY-SA 3.0)"
       },
       {
-        url: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Australian_War_Memorial_Canberra.jpg",
+        url: "https://commons.wikimedia.org/wiki/Special:FilePath/Australian_War_Memorial_Canberra.jpg?width=800",
         attribution: "Australian War Memorial, Canberra — Wikimedia Commons (CC BY-SA 3.0)"
       }
     ]
@@ -93,146 +93,21 @@ const COUNTRIES_A_E = [
     flagAttribution: "Flag of Austria — Wikimedia Commons (Public Domain)",
     capitalImages: [
       {
-        url: "https://upload.wikimedia.org/wikipedia/commons/5/5f/St._Stephen%27s_Cathedral_Vienna.jpg",
+        url: "https://commons.wikimedia.org/wiki/Special:FilePath/St._Stephen%27s_Cathedral_Vienna.jpg?width=800",
         attribution: "St. Stephen's Cathedral, Vienna — Wikimedia Commons (CC BY-SA 4.0)"
       },
       {
-        url: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Sch%C3%B6nbrunn_Palace_Vienna.jpg",
+        url: "https://commons.wikimedia.org/wiki/Special:FilePath/Sch%C3%B6nbrunn_Palace_Vienna.jpg?width=800",
         attribution: "Schönbrunn Palace, Vienna — Wikimedia Commons (CC BY-SA 4.0)"
       },
       {
-        url: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Hofburg_Palace_Vienna.jpg",
+        url: "https://commons.wikimedia.org/wiki/Special:FilePath/Hofburg_Palace_Vienna.jpg?width=800",
         attribution: "Hofburg Palace, Vienna — Wikimedia Commons (CC BY-SA 4.0)"
-      }
-    ]
-  },
-
-  {
-    country: "Belgium",
-    capital: "Brussels",
-    flagImage: "https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Belgium.svg",
-    flagAttribution: "Flag of Belgium — Wikimedia Commons (Public Domain)",
-    capitalImages: [
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Grand_Place_Brussels.jpg",
-        attribution: "Grand Place, Brussels — Wikimedia Commons (CC BY-SA 4.0)"
-      },
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Atomium_Brussels.jpg",
-        attribution: "Atomium, Brussels — Wikimedia Commons (CC BY-SA 4.0)"
-      },
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Royal_Palace_Brussels.jpg",
-        attribution: "Royal Palace of Brussels — Wikimedia Commons (CC BY-SA 4.0)"
-      }
-    ]
-  },
-
-  {
-    country: "Brazil",
-    capital: "Brasília",
-    flagImage: "https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg",
-    flagAttribution: "Flag of Brazil — Wikimedia Commons (Public Domain)",
-    capitalImages: [
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Congresso_Nacional_Brasilia.jpg",
-        attribution: "National Congress of Brazil, Brasília — Wikimedia Commons (CC BY-SA 3.0)"
-      },
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/8/8b/Cathedral_of_Brasilia.jpg",
-        attribution: "Cathedral of Brasília — Wikimedia Commons (CC BY-SA 3.0)"
-      },
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Pal%C3%A1cio_do_Planalto_Brasilia.jpg",
-        attribution: "Palácio do Planalto, Brasília — Wikimedia Commons (CC BY-SA 3.0)"
-      }
-    ]
-  },
-
-  {
-    country: "Canada",
-    capital: "Ottawa",
-    flagImage: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg",
-    flagAttribution: "Flag of Canada — Wikimedia Commons (Public Domain)",
-    capitalImages: [
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Parliament_Hill_Ottawa.jpg",
-        attribution: "Parliament Hill, Ottawa — Wikimedia Commons (CC BY-SA 3.0)"
-      },
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Rideau_Canal_Ottawa.jpg",
-        attribution: "Rideau Canal, Ottawa — Wikimedia Commons (CC BY-SA 3.0)"
-      },
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/4/4c/National_Gallery_of_Canada.jpg",
-        attribution: "National Gallery of Canada — Wikimedia Commons (CC BY-SA 3.0)"
-      }
-    ]
-  },
-
-  {
-    country: "China",
-    capital: "Beijing",
-    flagImage: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg",
-    flagAttribution: "Flag of China — Wikimedia Commons (Public Domain)",
-    capitalImages: [
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Tiananmen_Gate_Beijing.jpg",
-        attribution: "Tiananmen Gate, Beijing — Wikimedia Commons (CC BY-SA 3.0)"
-      },
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Temple_of_Heaven_Beijing.jpg",
-        attribution: "Temple of Heaven, Beijing — Wikimedia Commons (CC BY-SA 3.0)"
-      },
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Great_Hall_of_the_People_Beijing.jpg",
-        attribution: "Great Hall of the People, Beijing — Wikimedia Commons (CC BY-SA 3.0)"
-      }
-    ]
-  },
-
-  {
-    country: "Denmark",
-    capital: "Copenhagen",
-    flagImage: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Denmark.svg",
-    flagAttribution: "Flag of Denmark — Wikimedia Commons (Public Domain)",
-    capitalImages: [
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/1/10/Nyhavn_Copenhagen.jpg",
-        attribution: "Nyhavn, Copenhagen — Wikimedia Commons (CC BY-SA 4.0)"
-      },
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/5/5c/The_Little_Mermaid_statue_in_Copenhagen.jpg",
-        attribution: "The Little Mermaid, Copenhagen — Wikimedia Commons (CC BY-SA 4.0)"
-      },
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Amalienborg_Palace_Copenhagen.jpg",
-        attribution: "Amalienborg Palace, Copenhagen — Wikimedia Commons (CC BY-SA 4.0)"
-      }
-    ]
-  },
-
-  {
-    country: "Egypt",
-    capital: "Cairo",
-    flagImage: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg",
-    flagAttribution: "Flag of Egypt — Wikimedia Commons (Public Domain)",
-    capitalImages: [
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Cairo_Tahrir_Square.jpg",
-        attribution: "Tahrir Square, Cairo — Wikimedia Commons (CC BY-SA 3.0)"
-      },
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Cairo_Citadel.jpg",
-        attribution: "Citadel of Cairo — Wikimedia Commons (CC BY-SA 3.0)"
-      },
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Mosque_of_Muhammad_Ali_Cairo.jpg",
-        attribution: "Mosque of Muhammad Ali, Cairo — Wikimedia Commons (CC BY-SA 3.0)"
       }
     ]
   }
 ];
+
 
 
 // -----------------------------
