@@ -1,4 +1,3 @@
-console.log("LOADED COUNTRIES FILE:", new Date().toISOString());
 // -----------------------------
 // GAME STATE
 // -----------------------------
