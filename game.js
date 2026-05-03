@@ -1,6 +1,6 @@
 /**
  * THE ASK ME SOCIAL GAME - CORE ENGINE
- * Feature: Randomized Country Order per Session
+ * Feature: Specific Landmark Curation & iOS Sound Fixes
  */
 
 const COUNTRIES = [
@@ -9,12 +9,12 @@ const COUNTRIES = [
     { country: "Italy", capital: "Rome", flagImage: "https://flagcdn.com/w640/it.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800", attribution: "Colosseum" }] },
     { country: "United Kingdom", capital: "London", flagImage: "https://flagcdn.com/w640/gb.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800", attribution: "Big Ben" }] },
     { country: "Egypt", capital: "Cairo", flagImage: "https://flagcdn.com/w640/eg.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=800", attribution: "Pyramids" }] },
-    { country: "India", capital: "New Delhi", flagImage: "https://flagcdn.com/w640/in.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1564507592333-c60657ece523?auto=format&fit=crop&w=800", attribution: "Taj Mahal" }] },
+    { country: "India", capital: "New Delhi", flagImage: "https://flagcdn.com/w640/in.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1585506942812-e72b29cef752?auto=format&fit=crop&w=800", attribution: "Red Fort" }] },
     { country: "USA", capital: "Washington D.C.", flagImage: "https://flagcdn.com/w640/us.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1501466044931-62695aada8e9?auto=format&fit=crop&w=800", attribution: "The Capitol" }] },
-    { country: "China", capital: "Beijing", flagImage: "https://flagcdn.com/w640/cn.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=800", attribution: "Great Wall" }] },
+    { country: "China", capital: "Beijing", flagImage: "https://flagcdn.com/w640/cn.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=800", attribution: "Forbidden City" }] },
     { country: "Greece", capital: "Athens", flagImage: "https://flagcdn.com/w640/gr.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1503152394-c571994fd383?auto=format&fit=crop&w=800", attribution: "Parthenon" }] },
     { country: "Brazil", capital: "Brasilia", flagImage: "https://flagcdn.com/w640/br.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1510946702635-c3396b8240a1?auto=format&fit=crop&w=800", attribution: "Congress" }] },
-    { country: "Australia", capital: "Canberra", flagImage: "https://flagcdn.com/w640/au.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1590759223965-060ee483a7ad?auto=format&fit=crop&w=800", attribution: "Parliament" }] },
+    { country: "Australia", capital: "Canberra", flagImage: "https://flagcdn.com/w640/au.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1590759223965-060ee483a7ad?auto=format&fit=crop&w=800", attribution: "Parliament House" }] },
     { country: "Germany", capital: "Berlin", flagImage: "https://flagcdn.com/w640/de.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?auto=format&fit=crop&w=800", attribution: "Brandenburg Gate" }] },
     { country: "Canada", capital: "Ottawa", flagImage: "https://flagcdn.com/w640/ca.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1517022812141-23620dba5c23?auto=format&fit=crop&w=800", attribution: "Parliament Hill" }] },
     { country: "Turkey", capital: "Ankara", flagImage: "https://flagcdn.com/w640/tr.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=800", attribution: "Anitkabir" }] },
@@ -31,7 +31,7 @@ const COUNTRIES = [
     { country: "South Africa", capital: "Pretoria", flagImage: "https://flagcdn.com/w640/za.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=800", attribution: "Union Buildings" }] },
     { country: "Hungary", capital: "Budapest", flagImage: "https://flagcdn.com/w640/hu.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1552331526-7f49557436b7?auto=format&fit=crop&w=800", attribution: "Parliament" }] },
     { country: "Czech Republic", capital: "Prague", flagImage: "https://flagcdn.com/w640/cz.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=800", attribution: "Charles Bridge" }] },
-    { country: "Portugal", capital: "Lisbon", flagImage: "https://flagcdn.com/w640/pt.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=800", attribution: "Belem Tower" }] },
+    { country: "Portugal", capital: "Lisbon", flagImage: "https://flagcdn.com/w640/pt.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1503917988258-f87a78e3c995?auto=format&fit=crop&w=800", attribution: "Belém Tower" }] },
     { country: "Switzerland", capital: "Bern", flagImage: "https://flagcdn.com/w640/ch.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=800", attribution: "Zytglogge" }] },
     { country: "Singapore", capital: "Singapore", flagImage: "https://flagcdn.com/w640/sg.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1525596662741-e94ff9f26de1?auto=format&fit=crop&w=800", attribution: "Marina Bay" }] },
     { country: "Malaysia", capital: "Kuala Lumpur", flagImage: "https://flagcdn.com/w640/my.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1521404118335-51364585642d?auto=format&fit=crop&w=800", attribution: "Petronas" }] },
@@ -56,25 +56,22 @@ const COUNTRIES = [
     { country: "Israel", capital: "Jerusalem", flagImage: "https://flagcdn.com/w640/il.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1544933863-48016caec907?auto=format&fit=crop&w=800", attribution: "Old City" }] }
 ];
 
-// GAME STATE
+// ENGINE STATE
 let currentIndex = 0;
 let isCountryQuestion = true;
 let score = 0;
 let firstTry = true;
 let soundEnabled = false;
 
-// DOM ELEMENTS
 const imgElement = document.getElementById('flag-image');
 const questionText = document.getElementById('question-text');
 const optionsGrid = document.getElementById('options-grid');
 const progressBar = document.getElementById('progress-bar');
 const scoreDisplay = document.getElementById('score-display');
 
-// SOUNDS
 const correctSound = new Audio('sounds/correct.mp3');
 const wrongSound = new Audio('sounds/wrong.mp3');
 
-// Fisher-Yates Shuffle Logic
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -84,7 +81,9 @@ function shuffle(array) {
 
 document.getElementById('start-btn').onclick = () => {
     soundEnabled = true;
-    shuffle(COUNTRIES); // Shuffles every time a new game starts
+    correctSound.play().then(() => correctSound.pause()).catch(() => {});
+    wrongSound.play().then(() => wrongSound.pause()).catch(() => {});
+    shuffle(COUNTRIES);
     document.getElementById('start-screen').classList.add('hidden');
     document.getElementById('game-screen').classList.remove('hidden');
     loadQuestion();
@@ -93,8 +92,11 @@ document.getElementById('start-btn').onclick = () => {
 function playSound(isCorrect) {
     if (!soundEnabled) return;
     const sound = isCorrect ? correctSound : wrongSound;
+    sound.pause();
     sound.currentTime = 0;
-    sound.play().catch(e => console.log("Audio blocked", e));
+    setTimeout(() => {
+        sound.play().catch(e => console.log("Audio failed", e));
+    }, 15);
 }
 
 function loadQuestion() {
