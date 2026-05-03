@@ -1,6 +1,6 @@
 /**
  * THE ASK ME SOCIAL GAME - CORE ENGINE
- * Feature: Specific Landmark Curation & True Session Randomization
+ * Feature: Curated Brasília Imagery & True Randomization
  */
 
 const COUNTRIES = [
@@ -13,7 +13,7 @@ const COUNTRIES = [
     { country: "USA", capital: "Washington D.C.", flagImage: "https://flagcdn.com/w640/us.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1501466044931-62695aada8e9?auto=format&fit=crop&w=800", attribution: "The Capitol" }] },
     { country: "China", capital: "Beijing", flagImage: "https://flagcdn.com/w640/cn.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=800", attribution: "Forbidden City" }] },
     { country: "Greece", capital: "Athens", flagImage: "https://flagcdn.com/w640/gr.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1503152394-c571994fd383?auto=format&fit=crop&w=800", attribution: "Parthenon" }] },
-    { country: "Brazil", capital: "Brasilia", flagImage: "https://flagcdn.com/w640/br.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1599424423714-2394d691060f?auto=format&fit=crop&w=800", attribution: "Monumental Axis" }] },
+    { country: "Brazil", capital: "Brasilia", flagImage: "https://flagcdn.com/w640/br.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1562916600-47fa364e12e1?auto=format&fit=crop&w=800", attribution: "National Congress" }] },
     { country: "Australia", capital: "Canberra", flagImage: "https://flagcdn.com/w640/au.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1590759223965-060ee483a7ad?auto=format&fit=crop&w=800", attribution: "Parliament House" }] },
     { country: "Germany", capital: "Berlin", flagImage: "https://flagcdn.com/w640/de.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?auto=format&fit=crop&w=800", attribution: "Brandenburg Gate" }] },
     { country: "Canada", capital: "Ottawa", flagImage: "https://flagcdn.com/w640/ca.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1517022812141-23620dba5c23?auto=format&fit=crop&w=800", attribution: "Parliament Hill" }] },
@@ -56,7 +56,7 @@ const COUNTRIES = [
     { country: "Israel", capital: "Jerusalem", flagImage: "https://flagcdn.com/w640/il.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1544933863-48016caec907?auto=format&fit=crop&w=800", attribution: "Old City" }] }
 ];
 
-// ENGINE STATE
+// STATE MANAGEMENT
 let currentIndex = 0;
 let isCountryQuestion = true;
 let score = 0;
@@ -72,10 +72,6 @@ const scoreDisplay = document.getElementById('score-display');
 const correctSound = new Audio('sounds/correct.mp3');
 const wrongSound = new Audio('sounds/wrong.mp3');
 
-/**
- * TRUE RANDOMIZATION: Fisher-Yates (Knuth) Shuffle
- * This modifies the array in place to ensure a unique order every game session.
- */
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -85,15 +81,12 @@ function shuffle(array) {
 
 document.getElementById('start-btn').onclick = () => {
     soundEnabled = true;
-    
-    // iOS AUDIO FIX: Prime the audio engine on user click
     correctSound.play().then(() => correctSound.pause()).catch(() => {});
     wrongSound.play().then(() => wrongSound.pause()).catch(() => {});
     
-    // RE-SHUFFLE COUNTRIES EVERY START
     shuffle(COUNTRIES);
-    currentIndex = 0; // Reset index for new games
-    score = 0;       // Reset score
+    currentIndex = 0;
+    score = 0;
     scoreDisplay.innerText = `Score: 0`;
 
     document.getElementById('start-screen').classList.add('hidden');
@@ -107,7 +100,7 @@ function playSound(isCorrect) {
     sound.pause();
     sound.currentTime = 0;
     setTimeout(() => {
-        sound.play().catch(e => console.log("Audio Playback Blocked", e));
+        sound.play().catch(e => console.log("Audio failed", e));
     }, 15);
 }
 
