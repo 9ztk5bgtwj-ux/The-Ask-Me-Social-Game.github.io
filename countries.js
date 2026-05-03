@@ -10,7 +10,8 @@ const COUNTRIES_A_E = [
     flagAttribution: "Flag of Albania — Wikimedia Commons (Public Domain)",
     capitalImages: [
       {
-        url: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Skanderbeg_Square_Tirana_2016.jpg",
+        url: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Tirana_Skanderbeg_Square_2020.jpg",
+
         attribution: "Skanderbeg Square, Tirana — Wikimedia Commons (CC BY-SA 4.0)"
       },
       {
