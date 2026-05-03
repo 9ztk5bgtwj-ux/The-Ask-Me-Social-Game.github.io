@@ -137,13 +137,14 @@ function loadCapitalQuestion() {
     Math.floor(Math.random() * item.capitalImages.length)
   ];
 
-  // Load landmark with fallback to flag
+  // Load landmark with delayed fallback to flag
   flagImage.onerror = () => {
-  setTimeout(() => {
-    flagImage.onerror = null;
-    flagImage.src = item.flagImage;
-  }, 500);
-};
+    setTimeout(() => {
+      flagImage.onerror = null;
+      flagImage.src = item.flagImage;
+    }, 500);
+  };
+
   flagImage.src = landmark.url;
 
   // Correct question wording
