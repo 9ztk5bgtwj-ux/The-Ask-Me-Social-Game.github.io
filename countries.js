@@ -3,8 +3,7 @@ console.log("LOADED COUNTRIES FILE:", new Date().toISOString());
 // A–E
 // -----------------------------
 const COUNTRIES_A_E = [
-  {
-    {
+  { 
   country: "Albania",
   capital: "Tirana",
   flagImage: "https://upload.wikimedia.org/wikipedia/commons/3/36/Flag_of_Albania.svg",
