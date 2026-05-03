@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hayden's Ask Me Social Quiz</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>The Ask Me Social Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- Start Screen -->
-  <div id="start-screen">
-    <h1>Hayden's Ask Me Social Quiz</h1>
-    <button id="start-button">Start Game</button>
-  </div>
-
-  <!-- Game Container -->
-  <div id="game-container" class="hidden">
-    <div id="progress-bar"></div>
-
-    <div id="question-area">
-      <img id="flag-image" alt="Flag" crossorigin="anonymous" />
-      <h2 id="question-text"></h2>
+    <!-- Start Screen -->
+    <div id="start-screen" class="screen">
+        <h1>The Ask Me Social Game</h1>
+        <button id="start-btn">Start Game</button>
     </div>
 
-    <div id="options"></div>
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen hidden">
+        <div class="header">
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            <p id="score-display">Score: 0</p>
+        </div>
 
-    <div id="feedback"></div>
-  </div>
+        <div id="question-container">
+            <h2 id="question-text">Which country does this flag belong to?</h2>
+            <div class="image-frame">
+                <img id="flag-image" src="" alt="Game Image">
+            </div>
+            <div id="options-grid"></div>
+        </div>
+    </div>
 
-  <!-- End Screen -->
-  <div id="end-screen" class="hidden">
-    <h1>Great Job!</h1>
-    <p id="final-score"></p>
-    <button id="play-again">Play Again</button>
-  </div>
+    <!-- End Screen -->
+    <div id="end-screen" class="screen hidden">
+        <h1>Game Over!</h1>
+        <p id="final-score"></p>
+        <button onclick="location.reload()">Play Again</button>
+    </div>
 
-  <!-- Scripts -->
-<script src="countries_v2.js"></script>
-<script src="game.js"></script>
-
-
+    <script src="game.js"></script>
 </body>
 </html>
