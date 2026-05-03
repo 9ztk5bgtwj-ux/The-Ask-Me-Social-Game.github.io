@@ -139,9 +139,11 @@ function loadCapitalQuestion() {
 
   // Load landmark with fallback to flag
   flagImage.onerror = () => {
+  setTimeout(() => {
     flagImage.onerror = null;
     flagImage.src = item.flagImage;
-  };
+  }, 500);
+};
   flagImage.src = landmark.url;
 
   // Correct question wording
