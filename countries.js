@@ -4,27 +4,26 @@ console.log("LOADED COUNTRIES FILE:", new Date().toISOString());
 // -----------------------------
 const COUNTRIES_A_E = [
   {
-    country: "Albania",
-    capital: "Tirana",
-    flagImage: "https://upload.wikimedia.org/wikipedia/commons/3/36/Flag_of_Albania.svg",
-    flagAttribution: "Flag of Albania — Wikimedia Commons (Public Domain)",
-    capitalImages: [
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Tirana_Skanderbeg_Square_2020.jpg",
-
-        attribution: "Skanderbeg Square, Tirana — Wikimedia Commons (CC BY-SA 4.0)"
-      },
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Tirana_Clock_Tower.jpg",
-        attribution: "Clock Tower of Tirana — Wikimedia Commons (CC BY-SA 4.0)"
-      },
-      {
-        url: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Tirana_Et%27hem_Bey_Mosque.jpg",
-        attribution: "Et'hem Bey Mosque, Tirana — Wikimedia Commons (CC BY-SA 4.0)"
-      }
-    ]
-  },
-
+    {
+  country: "Albania",
+  capital: "Tirana",
+  flagImage: "https://upload.wikimedia.org/wikipedia/commons/3/36/Flag_of_Albania.svg",
+  flagAttribution: "Flag of Albania — Wikimedia Commons (Public Domain)",
+  capitalImages: [
+    {
+      url: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Tirana_Skanderbeg_Square_2020.jpg",
+      attribution: "Skanderbeg Square, Tirana — Wikimedia Commons (CC BY-SA 4.0)"
+    },
+    {
+      url: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Et%27hem_Bey_Mosque_Tirana_2016.jpg",
+      attribution: "Et'hem Bey Mosque, Tirana — Wikimedia Commons (CC BY-SA 4.0)"
+    },
+    {
+      url: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Tirana_Clock_Tower_2016.jpg",
+      attribution: "Clock Tower of Tirana — Wikimedia Commons (CC BY-SA 4.0)"
+    }
+  ]
+},
   {
     country: "Algeria",
     capital: "Algiers",
