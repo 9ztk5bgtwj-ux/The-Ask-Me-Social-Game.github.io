@@ -1,58 +1,19 @@
 /**
- * THE ASK ME SOCIAL GAME - VERSION 4.0
- * Hard-coded Direct URLs - No dynamic construction
+ * THE ASK ME SOCIAL GAME - VERSION 5.0
+ * Fixed: Explicit Image URLs & Fixed Transition Logic
  */
 
 const COUNTRIES = [
-    { 
-        country: "Canada", 
-        capital: "Ottawa", 
-        flagImage: "https://flagcdn.com/w640/ca.png", 
-        capitalImages: [{ url: "https://images.unsplash.com/photo-1559511260-66a654ae982a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }] 
-    },
-    { 
-        country: "Brazil", 
-        capital: "Brasilia", 
-        flagImage: "https://flagcdn.com/w640/br.png", 
-        capitalImages: [{ url: "https://images.unsplash.com/photo-1562916600-47fa364e12e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }] 
-    },
-    { 
-        country: "Portugal", 
-        capital: "Lisbon", 
-        flagImage: "https://flagcdn.com/w640/pt.png", 
-        capitalImages: [{ url: "https://images.unsplash.com/photo-1580238150334-118858686e0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }] 
-    },
-    { 
-        country: "France", 
-        capital: "Paris", 
-        flagImage: "https://flagcdn.com/w640/fr.png", 
-        capitalImages: [{ url: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }] 
-    },
-    { 
-        country: "Japan", 
-        capital: "Tokyo", 
-        flagImage: "https://flagcdn.com/w640/jp.png", 
-        capitalImages: [{ url: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }] 
-    },
-    { 
-        country: "Italy", 
-        capital: "Rome", 
-        flagImage: "https://flagcdn.com/w640/it.png", 
-        capitalImages: [{ url: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }] 
-    },
-    { 
-        country: "United Kingdom", 
-        capital: "London", 
-        flagImage: "https://flagcdn.com/w640/gb.png", 
-        capitalImages: [{ url: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }] 
-    },
-    { 
-        country: "USA", 
-        capital: "Washington D.C.", 
-        flagImage: "https://flagcdn.com/w640/us.png", 
-        capitalImages: [{ url: "https://images.unsplash.com/photo-1501466044931-62695aada8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }] 
-    }
-    // Add other countries following this EXACT URL pattern
+    { country: "Canada", capital: "Ottawa", flagImage: "https://flagcdn.com/w640/ca.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1559511260-66a654ae982a?auto=format&fit=crop&w=800&q=80" }] },
+    { country: "Brazil", capital: "Brasilia", flagImage: "https://flagcdn.com/w640/br.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1562916600-47fa364e12e1?auto=format&fit=crop&w=800&q=80" }] },
+    { country: "Portugal", capital: "Lisbon", flagImage: "https://flagcdn.com/w640/pt.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1580238150334-118858686e0c?auto=format&fit=crop&w=800&q=80" }] },
+    { country: "France", capital: "Paris", flagImage: "https://flagcdn.com/w640/fr.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" }] },
+    { country: "Japan", capital: "Tokyo", flagImage: "https://flagcdn.com/w640/jp.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80" }] },
+    { country: "Italy", capital: "Rome", flagImage: "https://flagcdn.com/w640/it.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80" }] },
+    { country: "United Kingdom", capital: "London", flagImage: "https://flagcdn.com/w640/gb.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80" }] },
+    { country: "USA", capital: "Washington D.C.", flagImage: "https://flagcdn.com/w640/us.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1501466044931-62695aada8e9?auto=format&fit=crop&w=800&q=80" }] },
+    { country: "Germany", capital: "Berlin", flagImage: "https://flagcdn.com/w640/de.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?auto=format&fit=crop&w=800&q=80" }] },
+    { country: "Australia", capital: "Canberra", flagImage: "https://flagcdn.com/w640/au.png", capitalImages: [{ url: "https://images.unsplash.com/photo-1590759223965-060ee483a7ad?auto=format&fit=crop&w=800&q=80" }] }
 ];
 
 let currentIndex = 0;
@@ -93,16 +54,21 @@ function loadQuestion() {
     firstTry = true;
     updateProgress();
 
-    // Reset the image source to empty first to force a clean swap
-    imgElement.src = ""; 
+    // IMPORTANT: Clear previous image so Lisbon doesn't linger while next city loads
+    imgElement.style.opacity = "0"; 
 
-    if (isCountryQuestion) {
-        imgElement.src = data.flagImage;
-        questionText.innerText = "Which country does this flag belong to?";
-    } else {
-        imgElement.src = data.capitalImages[0].url;
-        questionText.innerText = `Which city is the capital of ${data.country}?`;
-    }
+    setTimeout(() => {
+        if (isCountryQuestion) {
+            imgElement.src = data.flagImage;
+            questionText.innerText = "Which country does this flag belong to?";
+        } else {
+            // FIXED: Using the direct URL from the array, NOT a search term
+            imgElement.src = data.capitalImages[0].url;
+            questionText.innerText = `Which city is the capital of ${data.country}?`;
+        }
+        imgElement.onload = () => { imgElement.style.opacity = "1"; };
+    }, 50);
+
     displayOptions(isCountryQuestion);
 }
 
@@ -170,5 +136,5 @@ function showEndScreen() {
 }
 
 document.getElementById('restart-btn').onclick = () => {
-    location.reload(); // Cleanest way to reset everything
+    location.reload();
 };
